@@ -1,10 +1,20 @@
 var express = require('express')
 var app = express()
 
-app.set('view engine', 'ejs')
+
+
+
+
+
+app.use(express.static('public'))
+
+
+
+app.set('view engine', 'pug')
+
+
 
 app.get('/about_me', (req, res) => {
-  var guestAge = req.query.age
   res.render('about_me', {
     title: '關於我',
     guest: req.query.guest,
